@@ -3,7 +3,7 @@ function oppsettRadio () {
     radioNivå2 = 125
     radioNivå3 = 137
     radioNivå4 = 142
-    radioNivå5 = 164
+    radioNivå5 = 151
 }
 function nivåFullført () {
     basic.showIcon(IconNames.Yes,0)
