@@ -30,6 +30,19 @@ strip.showRainbow(1, 360)
     strip.show()
     basic.clearScreen()
 }
+input.onButtonPressed(Button.AB, function () {
+    nivå += -1
+    basic.showNumber(nivå)
+    if (nivå == 1) {
+        radio.setGroup(radioNivå1)
+    } else if (nivå == 2) {
+        radio.setGroup(radioNivå2)
+    } else if (nivå == 3) {
+        radio.setGroup(radioNivå2)
+    } else if (nivå == 4) {
+        radio.setGroup(radioNivå4)
+    }
+})
 radio.onReceivedString(function (receivedString) {
     if (nivå == 1 && receivedString == "NEWTON") {
         nivåFullført()
