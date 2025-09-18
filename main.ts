@@ -1,4 +1,4 @@
-function oppsettOppgaver() {
+function oppsettOppgaver () {
     radioNivå1 = 142
     radioNivå2 = 125
     radioNivå3 = 137
@@ -10,12 +10,12 @@ function oppsettOppgaver() {
     kodeord4 = "NEWTON"
     kodeord5 = "MASKINIST"
 }
-function nivåFullført() {
+function nivåFullført () {
     basic.showIcon(IconNames.Yes, 0)
-    music.beginMelody([
+music.beginMelody([
         "C5:1", "G5:6"
     ], MelodyOptions.Once)
-    for (let index = 0; index < 6; index++) {
+for (let index = 0; index < 6; index++) {
         strip.showColor(neopixel.colors(NeoPixelColors.Green))
         basic.pause(200)
         strip.clear()
@@ -25,7 +25,7 @@ function nivåFullført() {
     strip.showColor(neopixel.colors(NeoPixelColors.Yellow))
     nivå += 1
 }
-function settRadiogruppeNivå() {
+function settRadiogruppeNivå () {
     if (nivå == 1) {
         radio.setGroup(radioNivå1)
     } else if (nivå == 2) {
@@ -43,13 +43,13 @@ input.onButtonPressed(Button.A, function () {
     nivå += -1
     settRadiogruppeNivå()
 })
-function spillFullført() {
+function spillFullført () {
     basic.showIcon(IconNames.Heart, 0)
-    music.beginMelody([
+music.beginMelody([
         "C4:1", "E4:1", "G4:1", "C5:2",
         "G4:1", "C5:4"
     ], MelodyOptions.Once)
-    strip.showRainbow(1, 360)
+strip.showRainbow(1, 360)
     for (let index = 0; index < 240; index++) {
         strip.rotate(1)
         strip.show()
@@ -76,12 +76,12 @@ input.onButtonPressed(Button.B, function () {
     nivå += 1
     settRadiogruppeNivå()
 })
-function nivåFeilet() {
+function nivåFeilet () {
     basic.showIcon(IconNames.No, 0)
-    music.beginMelody([
+music.beginMelody([
         "A3:2", "F3:4"
     ], MelodyOptions.Once)
-    for (let index = 0; index < 6; index++) {
+for (let index = 0; index < 6; index++) {
         strip.showColor(neopixel.colors(NeoPixelColors.Red))
         basic.pause(200)
         strip.clear()
